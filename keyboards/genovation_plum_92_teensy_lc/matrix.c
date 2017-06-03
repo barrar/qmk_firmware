@@ -6,18 +6,18 @@
 #include "matrix.h"
 #include "wait.h"
 #include "timer.h"
+#include "action_layer.h"
+
 
 static bool debouncing = false;
 static uint16_t debouncing_time = 0;
-
-/* matrix state(1:on, 0:off) */
 static matrix_row_t matrix[MATRIX_ROWS];
 static matrix_row_t matrix_debouncing[MATRIX_ROWS];
-
 static matrix_row_t read_cols(void);
 static void init_cols(void);
 static void unselect_row(uint8_t row);
 static void select_row(uint8_t row);
+static bool led_on = false;
 
 #ifdef PRINT_SCAN_PER_SECOND
 static uint32_t scan_count = 0;
@@ -50,6 +50,16 @@ void matrix_init(void)
 
 uint8_t matrix_scan(void)
 {
+    if (led_on == false && biton32(layer_state) == 1) {
+        led_on = true;
+        // output high
+        palSetPad(TEENSY_PIN17_IOPORT, TEENSY_PIN17);
+    } else if(led_on == true) {
+        led_on = false;
+        // output low
+        palSetPadMode(TEENSY_PIN17_IOPORT, TEENSY_PIN17, PAL_MODE_OUTPUT_PUSHPULL);
+        palClearPad(TEENSY_PIN17_IOPORT, TEENSY_PIN17);
+    }
     #ifdef PRINT_SCAN_PER_SECOND
     if ((scan_count++ == 8001)){
         print_decs(8000000/timer_elapsed(time_start));
