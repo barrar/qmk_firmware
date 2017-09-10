@@ -1,0 +1,285 @@
+[1mdiff --git a/keyboards/genovation_plum_92_teensy_lc/chconf.h b/keyboards/genovation_plum_92_teensy_lc/chconf.h[m
+[1mindex 50eed02..11f6d6c 100644[m
+[1m--- a/keyboards/genovation_plum_92_teensy_lc/chconf.h[m
+[1m+++ b/keyboards/genovation_plum_92_teensy_lc/chconf.h[m
+[36m@@ -81,7 +81,7 @@[m
+  * @note    The round robin preemption is not supported in tickless mode and[m
+  *          must be set to zero in that case.[m
+  */[m
+[31m-#define CH_CFG_TIME_QUANTUM                 20[m
+[32m+[m[32m#define CH_CFG_TIME_QUANTUM                 0[m
+ [m
+ /**[m
+  * @brief   Managed RAM size.[m
+[36m@@ -107,7 +107,7 @@[m
+ [m
+ /* Use __WFI in the idle thread for waiting. Does lower the power[m
+  * consumption. */[m
+[31m-#define CORTEX_ENABLE_WFI_IDLE              TRUE[m
+[32m+[m[32m#define CORTEX_ENABLE_WFI_IDLE              FALSE[m
+ [m
+ /** @} */[m
+ [m
+[36m@@ -152,7 +152,7 @@[m
+  *[m
+  * @note    The default is @p TRUE.[m
+  */[m
+[31m-#define CH_CFG_USE_REGISTRY                 TRUE[m
+[32m+[m[32m#define CH_CFG_USE_REGISTRY                 FALSE[m
+ [m
+ /**[m
+  * @brief   Threads synchronization APIs.[m
+[36m@@ -161,7 +161,7 @@[m
+  *[m
+  * @note    The default is @p TRUE.[m
+  */[m
+[31m-#define CH_CFG_USE_WAITEXIT                 TRUE[m
+[32m+[m[32m#define CH_CFG_USE_WAITEXIT                 FALSE[m
+ [m
+ /**[m
+  * @brief   Semaphores APIs.[m
+[36m@@ -169,7 +169,7 @@[m
+  *[m
+  * @note    The default is @p TRUE.[m
+  */[m
+[31m-#define CH_CFG_USE_SEMAPHORES               TRUE[m
+[32m+[m[32m#define CH_CFG_USE_SEMAPHORES               FALSE[m
+ [m
+ /**[m
+  * @brief   Semaphores queuing mode.[m
+[36m@@ -188,7 +188,7 @@[m
+  *[m
+  * @note    The default is @p TRUE.[m
+  */[m
+[31m-#define CH_CFG_USE_MUTEXES                  TRUE[m
+[32m+[m[32m#define CH_CFG_USE_MUTEXES                  FALSE[m
+ [m
+ /**[m
+  * @brief   Enables recursive behavior on mutexes.[m
+[36m@@ -208,7 +208,7 @@[m
+  * @note    The default is @p TRUE.[m
+  * @note    Requires @p CH_CFG_USE_MUTEXES.[m
+  */[m
+[31m-#define CH_CFG_USE_CONDVARS                 TRUE[m
+[32m+[m[32m#define CH_CFG_USE_CONDVARS                 FALSE[m
+ [m
+ /**[m
+  * @brief   Conditional Variables APIs with timeout.[m
+[36m@@ -218,7 +218,7 @@[m
+  * @note    The default is @p TRUE.[m
+  * @note    Requires @p CH_CFG_USE_CONDVARS.[m
+  */[m
+[31m-#define CH_CFG_USE_CONDVARS_TIMEOUT         TRUE[m
+[32m+[m[32m#define CH_CFG_USE_CONDVARS_TIMEOUT         FALSE[m
+ [m
+ /**[m
+  * @brief   Events Flags APIs.[m
+[36m@@ -236,7 +236,7 @@[m
+  * @note    The default is @p TRUE.[m
+  * @note    Requires @p CH_CFG_USE_EVENTS.[m
+  */[m
+[31m-#define CH_CFG_USE_EVENTS_TIMEOUT           TRUE[m
+[32m+[m[32m#define CH_CFG_USE_EVENTS_TIMEOUT           FALSE[m
+ [m
+ /**[m
+  * @brief   Synchronous Messages APIs.[m
+[36m@@ -245,7 +245,7 @@[m
+  *[m
+  * @note    The default is @p TRUE.[m
+  */[m
+[31m-#define CH_CFG_USE_MESSAGES                 TRUE[m
+[32m+[m[32m#define CH_CFG_USE_MESSAGES                 FALSE[m
+ [m
+ /**[m
+  * @brief   Synchronous Messages queuing mode.[m
+[36m@@ -266,7 +266,7 @@[m
+  * @note    The default is @p TRUE.[m
+  * @note    Requires @p CH_CFG_USE_SEMAPHORES.[m
+  */[m
+[31m-#define CH_CFG_USE_MAILBOXES                TRUE[m
+[32m+[m[32m#define CH_CFG_USE_MAILBOXES                FALSE[m
+ [m
+ /**[m
+  * @brief   Core Memory Manager APIs.[m
+[36m@@ -275,7 +275,7 @@[m
+  *[m
+  * @note    The default is @p TRUE.[m
+  */[m
+[31m-#define CH_CFG_USE_MEMCORE                  TRUE[m
+[32m+[m[32m#define CH_CFG_USE_MEMCORE                  FALSE[m
+ [m
+ /**[m
+  * @brief   Heap Allocator APIs.[m
+[36m@@ -287,7 +287,7 @@[m
+  *          @p CH_CFG_USE_SEMAPHORES.[m
+  * @note    Mutexes are recommended.[m
+  */[m
+[31m-#define CH_CFG_USE_HEAP                     TRUE[m
+[32m+[m[32m#define CH_CFG_USE_HEAP                     FALSE[m
+ [m
+ /**[m
+  * @brief   Memory Pools Allocator APIs.[m
+[36m@@ -296,7 +296,7 @@[m
+  *[m
+  * @note    The default is @p TRUE.[m
+  */[m
+[31m-#define CH_CFG_USE_MEMPOOLS                 TRUE[m
+[32m+[m[32m#define CH_CFG_USE_MEMPOOLS                 FALSE[m
+ [m
+ /**[m
+  * @brief   Dynamic Threads APIs.[m
+[36m@@ -307,7 +307,7 @@[m
+  * @note    Requires @p CH_CFG_USE_WAITEXIT.[m
+  * @note    Requires @p CH_CFG_USE_HEAP and/or @p CH_CFG_USE_MEMPOOLS.[m
+  */[m
+[31m-#define CH_CFG_USE_DYNAMIC                  TRUE[m
+[32m+[m[32m#define CH_CFG_USE_DYNAMIC                  FALSE[m
+ [m
+ /** @} */[m
+ [m
+[1mdiff --git a/keyboards/genovation_plum_92_teensy_lc/config.h b/keyboards/genovation_plum_92_teensy_lc/config.h[m
+[1mindex 2b77666..ce5e1e6 100644[m
+[1m--- a/keyboards/genovation_plum_92_teensy_lc/config.h[m
+[1m+++ b/keyboards/genovation_plum_92_teensy_lc/config.h[m
+[36m@@ -93,9 +93,6 @@[m [malong with this program.  If not, see <http://www.gnu.org/licenses/>.[m
+  *  These options are also useful to firmware size reduction.[m
+  */[m
+ [m
+[31m-/* disable print */[m
+[31m-//#define NO_PRINT[m
+[31m-[m
+ /* disable action features */[m
+ //#define NO_ACTION_LAYER[m
+ //#define NO_ACTION_TAPPING[m
+[1mdiff --git a/keyboards/genovation_plum_92_teensy_lc/keymaps/default/keymap.c b/keyboards/genovation_plum_92_teensy_lc/keymaps/default/keymap.c[m
+[1mindex 4d1d386..f695e3a 100644[m
+[1m--- a/keyboards/genovation_plum_92_teensy_lc/keymaps/default/keymap.c[m
+[1m+++ b/keyboards/genovation_plum_92_teensy_lc/keymaps/default/keymap.c[m
+[36m@@ -4,34 +4,68 @@[m
+ #include "util.h"[m
+ #include "quantum_keycodes.h"[m
+ #include "hal.h"[m
+[31m-#define  OOOOOOO KC_TRNS[m
+[32m+[m[32m#define  OOOOOO KC_TRNS[m
+ [m
+ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[m
+  /* 0: qerty */[m
+ [0] = KEYMAP([m
+ KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_PSCR,KC_F14, KC_F15,[m
+[31m-KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,    KC_6,  KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSPC,KC_INS, KC_PGUP,[m
+[31m-KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,    KC_Y,  KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSLS,KC_DEL, KC_PGDN,[m
+[31m-KC_BSPC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,    KC_H,  KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_DEL, KC_HOME,KC_X,   KC_VOLU,[m
+[31m-KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,    KC_N,  KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_UP,  KC_END, KC_X,   KC_VOLD,[m
+[31m-KC_LCTL,KC_LALT,KC_LGUI,        KC_SPC,                 KC_ENT,         KC_FN2, KC_RCTL,KC_LEFT,KC_DOWN,KC_RGHT,TG(1),  KC_MUTE),[m
+[32m+[m[32mKC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,    KC_6,  KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSPC,KC_INS, KC_NO,[m
+[32m+[m[32mKC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,    KC_Y,  KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSLS,KC_DEL, KC_MUTE,[m
+[32m+[m[32mKC_BSPC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,    KC_H,  KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_DEL, KC_HOME,KC_PGUP,KC_VOLU,[m
+[32m+[m[32mKC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,    KC_N,  KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_UP,  KC_END, KC_PGDN,KC_VOLD,[m
+[32m+[m[32mKC_LCTL,KC_LALT,KC_LGUI,        KC_SPC,                 KC_ENT,         KC_RALT,KC_RCTL,KC_LEFT,KC_DOWN,KC_RGHT,TG(1),  MO(2)),[m
+ [m
+[31m- /* 1: FN 1 */[m
+ [1] = KEYMAP([m
+[31m-KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_PSCR,KC_F14, KC_SLEP,[m
+[31m-KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,    KC_6,  KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSPC,KC_INS, KC_PGUP,[m
+[31m-KC_TAB, M(0),   KC_W,   KC_E,   KC_R,   KC_T,    KC_Y,  KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSLS,KC_DEL, KC_PGDN,[m
+[31m-KC_BSPC,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,    KC_H,  KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_DEL, KC_HOME,KC_X,   KC_VOLU,[m
+[31m-KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,    KC_N,  KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_UP,  KC_END, KC_X,   KC_VOLD,[m
+[31m-KC_LCTL,KC_LALT,KC_LGUI,        KC_SPC,                 KC_ENT,         KC_FN2, KC_RCTL,KC_LEFT,KC_DOWN,KC_RGHT,OOOOOOO,KC_MUTE),[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO,[m
+[32m+[m[32mOOOOOO, M(0),   OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO,         OOOOOO,                 OOOOOO,         OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO),[m
+[32m+[m
+[32m+[m[32m[2] = KEYMAP([m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, KC_SLEP,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, M(2),   M(1),[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, KC_F19, KC_F16,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, KC_F23, KC_F20, KC_F17,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, OOOOOO, KC_F24, KC_F21, KC_F18,[m
+[32m+[m[32mOOOOOO, OOOOOO, OOOOOO,         OOOOOO,                 OOOOOO,         OOOOOO, OOOOOO, OOOOOO, OOOOOO, KC_F22, OOOOOO, OOOOOO),[m
+ };[m
+ [m
+ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt){[m
+     switch(id) {[m
+         case 0: {[m
+[31m-            return MACRO( T(5), END  );[m
+[32m+[m[41m        [m	[32mif (record->event.pressed) {[m
+[32m+[m[41m            [m	[32mreturn MACRO(I(30), D(5), U(5), D(5), U(5), END );[m
+[32m+[m[41m        [m	[32m}[m
+[32m+[m[32m        }[m
+[32m+[m[32m        case 1: {[m
+[32m+[m[41m        [m	[32mif (record->event.pressed) {[m
+[32m+[m[41m        [m		[32mregister_code(KC_LGUI);[m
+[32m+[m[41m        [m		[32mregister_code(KC_R);[m
+[32m+[m[41m        [m		[32munregister_code(KC_R);[m
+[32m+[m[41m        [m		[32munregister_code(KC_LGUI);[m
+[32m+[m[41m        [m		[32mchThdSleepMilliseconds(34);[m
+[32m+[m[41m        [m		[32mSEND_STRING("nircmd monitor off");[m
+[32m+[m[41m        [m		[32mregister_code(KC_ENT);[m
+[32m+[m[41m        [m		[32munregister_code(KC_ENT);[m
+[32m+[m[41m        [m		[32mreturn MACRO_NONE;[m
+[32m+[m[41m        [m	[32m}[m
+[32m+[m[32m        }[m
+[32m+[m[32m         case 2: {[m
+[32m+[m[41m        [m	[32mif (record->event.pressed) {[m
+[32m+[m[41m        [m		[32mregister_code(KC_LGUI);[m
+[32m+[m[41m        [m		[32mregister_code(KC_R);[m
+[32m+[m[41m        [m		[32munregister_code(KC_R);[m
+[32m+[m[41m        [m		[32munregister_code(KC_LGUI);[m
+[32m+[m[41m        [m		[32mchThdSleepMilliseconds(34);[m
+[32m+[m[41m        [m		[32mSEND_STRING("nircmd speak text ~$clipboard$");[m
+[32m+[m[41m        [m		[32mregister_code(KC_ENT);[m
+[32m+[m[41m        [m		[32munregister_code(KC_ENT);[m
+[32m+[m[41m        [m		[32mreturn MACRO_NONE;[m
+[32m+[m[41m        [m	[32m}[m
+         }[m
+[31m-            [m
+     }[m
+     return MACRO_NONE;[m
+ };[m
+\ No newline at end of file[m
+[1mdiff --git a/keyboards/genovation_plum_92_teensy_lc/matrix.c b/keyboards/genovation_plum_92_teensy_lc/matrix.c[m
+[1mindex 1f8589d..9df009c 100644[m
+[1m--- a/keyboards/genovation_plum_92_teensy_lc/matrix.c[m
+[1m+++ b/keyboards/genovation_plum_92_teensy_lc/matrix.c[m
+[36m@@ -6,18 +6,18 @@[m
+ #include "matrix.h"[m
+ #include "wait.h"[m
+ #include "timer.h"[m
+[32m+[m[32m#include "action_layer.h"[m
+[32m+[m
+ [m
+ static bool debouncing = false;[m
+ static uint16_t debouncing_time = 0;[m
+[31m-[m
+[31m-/* matrix state(1:on, 0:off) */[m
+ static matrix_row_t matrix[MATRIX_ROWS];[m
+ static matrix_row_t matrix_debouncing[MATRIX_ROWS];[m
+[31m-[m
+ static matrix_row_t read_cols(void);[m
+ static void init_cols(void);[m
+ static void unselect_row(uint8_t row);[m
+ static void select_row(uint8_t row);[m
+[32m+[m[32mstatic bool led_on = false;[m
+ [m
+ #ifdef PRINT_SCAN_PER_SECOND[m
+ static uint32_t scan_count = 0;[m
+[36m@@ -50,6 +50,16 @@[m [mvoid matrix_init(void)[m
+ [m
+ uint8_t matrix_scan(void)[m
+ {[m
+[32m+[m[32m    if (led_on == false && biton32(layer_state) == 1) {[m
+[32m+[m[32m        led_on = true;[m
+[32m+[m[32m        // output high[m
+[32m+[m[32m        palSetPad(TEENSY_PIN17_IOPORT, TEENSY_PIN17);[m
+[32m+[m[32m    } else if(led_on == true) {[m
+[32m+[m[32m        led_on = false;[m
+[32m+[m[32m        // output low[m
+[32m+[m[32m        palSetPadMode(TEENSY_PIN17_IOPORT, TEENSY_PIN17, PAL_MODE_OUTPUT_PUSHPULL);[m
+[32m+[m[32m        palClearPad(TEENSY_PIN17_IOPORT, TEENSY_PIN17);[m
+[32m+[m[32m    }[m
+     #ifdef PRINT_SCAN_PER_SECOND[m
+     if ((scan_count++ == 8001)){[m
+         print_decs(8000000/timer_elapsed(time_start));[m

@@ -107,7 +107,7 @@
 
 /* Use __WFI in the idle thread for waiting. Does lower the power
  * consumption. */
-#define CORTEX_ENABLE_WFI_IDLE              FALSE
+#define CORTEX_ENABLE_WFI_IDLE              TRUE
 
 /** @} */
 
