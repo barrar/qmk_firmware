@@ -1,3 +1,6 @@
+# Pictures of genovation plum 92 key keyboard with teensy lc
+http://imgur.com/a/XhAeo
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Build Status](https://travis-ci.org/qmk/qmk_firmware.svg?branch=master)](https://travis-ci.org/qmk/qmk_firmware) [![Gitter](https://badges.gitter.im/qmk/qmk_firmware.svg)](https://gitter.im/qmk/qmk_firmware?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
