@@ -1,6 +1,13 @@
 # Pictures of genovation plum 92 key keyboard with teensy lc
 http://imgur.com/a/XhAeo
 
+# Where to buy Teensy LC and more  
+https://store.oshpark.com/products/teensy-lc  
+https://www.amazon.com/dp/B01BMRTZGE  
+https://store.arduino.cc/usa/teensy-lc-usb-development-board  
+https://www.sparkfun.com/products/13305  
+https://hackaday.com/2015/02/03/the-teensy-lc-lc-means-low-cost/  
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Build Status](https://travis-ci.org/qmk/qmk_firmware.svg?branch=master)](https://travis-ci.org/qmk/qmk_firmware) [![Gitter](https://badges.gitter.im/qmk/qmk_firmware.svg)](https://gitter.im/qmk/qmk_firmware?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
